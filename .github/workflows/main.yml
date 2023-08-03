@@ -36,9 +36,9 @@ jobs:
     - name: Setup ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-      run: |
-        # Login to AWS ECR
-        $( aws ecr get-login --no-include-email )
+      # run: |
+      #   # Login to AWS ECR
+      #   $( aws ecr get-login --no-include-email )
     - name: Build and tag the image
       run: |
         # Build and tag the image
