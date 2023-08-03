@@ -36,15 +36,15 @@ jobs:
     - name: Setup ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-    #   run: |
-    #     # Login to AWS ECR
-    #     $( aws ecr get-login --no-include-email )
-    # - name: Build and tag the image
-    #   run: |
-    #     # Build and tag the image
-    #     docker build \
-    #       -t $CONTAINER_IMAGE \
-    #       -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE ./php-redis
+      run: |
+        # Login to AWS ECR
+        $( aws ecr get-login --no-include-email )
+    - name: Build and tag the image
+      run: |
+        # Build and tag the image
+        docker build \
+          -t $CONTAINER_IMAGE \
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE ./php-redis
  
     # Set image tag in kustomization
 
